@@ -6,4 +6,5 @@ __pycache__/
 
 # files
 .flaskenv
+devnotes.md
 *.pyc
