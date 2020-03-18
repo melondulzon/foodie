@@ -3,7 +3,7 @@
 <section id="editor" class="uk-container">
 
     <!-- HEADING -->
-    <h1 class="uk-h2">{{ url|title }} Recepta</h1>
+    <h1 class="uk-h2">Editar Recepta</h1>
 
     <!-- FORM -->
     <form method="POST" {% if recipe %} action="{{ url_for('save_recipe', recipe_id=recipe._id) }}" {% else %} action="{{ url_for('save_recipe', recipe_id='new') }}" {% endif %} >
