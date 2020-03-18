@@ -1,8 +1,8 @@
 {
-    "cuisine": ["american", "british", "caribbean", "chinese", "french", "greek", "indian", "italian", "japanese", "mediterranean", "mexican", "moroccan", "spanish", "thai", "turkish", "vietnamese"],
-    "course": ["afternoon-tea", "breakfast", "brunch", "buffet", "canapes", "cocktails", "condiment", "dessert", "dinner", "drink", "fish-course", "lunch", "main-course", "pasta-course", "side-dish", "snack", "soup-course", "starter", "supper", "treat", "vegetable-course"],
-    "planning": ["10-minute-supper", "beginners", "easily-doubled", "easily-halved", "everyday-food", "freezable", "in-season", "make-ahead", "make-it-tonight", "ultimate"],
-    "mood": ["budget", "casual", "comfort", "family-friendly", "formal", "hearty", "indulgent", "light", "quick", "romantic"],
-    "diet": ["dairy-free", "gluten-free", "healthy", "low-calorie", "low-fat", "low-salt", "vegetarian"],
-    "skill": ["easy", "medium", "hard"]
+    "cuisine": ["americana", "britànica", "caribenya", "xinesa", "francesa", "grega", "india", "italiana", "japonesa", "mediterrània", "mexicana", "marroquí", "catalana", "thai", "turca", "vietnamita"],
+    "course": ["berenar", "esmorzar", "aperitiu", "bufet", "canapès", "cocktails", "acompanyament", "postre", "sopar", "beguda", "peix", "dinar", "principal", "pasta", "complement", "snack", "sopa", "entrant", "sopar", "vegà", "vegetarià"],
+    "planning": ["sopar ràpid", "principiant", "fàcil de dividir", "per al dia a dia", "congelable", "de temporada", "sense preparació", "per fer la nit abans", "última hora"],
+    "mood": ["low-cost", "casual", "còmoda", "familiar", "formal", "romàntic", "indulgent", "lleugera", "ràpida", "festiu"],
+    "diet": ["sense làctosa", "gluten-free", "saludable", "baix en calories", "baix en greixos", "baix en sals", "vegetarian"],
+    "skill": ["fàcil", "mitjà", "difícil"]
 }
