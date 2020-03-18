@@ -19,7 +19,7 @@
             {% elif recipe.filters.ingred[0] != "" %}
                 {{ recipe.filters.ingred[0] }}
             {% else %}
-                {{ recipe.filters.cuisine }}
+                {{ recipe.filters.cuina }}
             {% endif %}
         </div>
 
@@ -31,7 +31,7 @@
             {% if sort == 'users.likes' %}M'agrada: <i uk-icon="arrow-down"></i>
             {% elif sort == 'users.dislikes' %}No m'agrada: <i uk-icon="arrow-down"></i>
             {% elif sort == 'details.title' %}Per títol:
-            {% elif sort == 'filters.skill' %}Dificultat: {{ recipe.filters.skill }}
+            {% elif sort == 'filters.dificultat' %}Dificultat: {{ recipe.filters.dificultat }}
             {% elif sort == 'details.author' %}Autor: {{ recipe.details.author }}
             {% elif sort == 'details.serves' %}{{ recipe.details.serves|title }}
             {% elif sort == 'filters.main_ingredient' %}Ingredient Principal:  

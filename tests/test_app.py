@@ -68,7 +68,7 @@ class TestAppRoutes(unittest.TestCase):
         assert 'Filter All Recipes' in data
         
         # categories
-        response = self.client.get('/categories/cuisine/chinese')
+        response = self.client.get('/categories/cuina/chinese')
         data = response.data.decode('utf-8')
         assert response.status_code == 200
         assert 'Featured Chinese Recipes' in data
@@ -80,7 +80,7 @@ class TestAppRoutes(unittest.TestCase):
         assert 'All-American T-Bone' in data 
 
         # pagination
-        response = self.client.get('/categories/cuisine/greek?page=2&sort=users.likes')
+        response = self.client.get('/categories/cuina/greek?page=2&sort=users.likes')
         data = response.data.decode('utf-8')
         assert response.status_code == 200
         assert 'All Greek Recipes' in data 

@@ -16,7 +16,7 @@
 
                     <!-- CARD BODY -->
                     <div class="uk-card-body">
-                        <div class="uk-card-badge uk-label">{{ recipe.filters.cuisine|title }}</div>
+                        <div class="uk-card-badge uk-label">{{ recipe.filters.cuina|title }}</div>
                         <h3 class="uk-card-title">
                             <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a>
                         </h3>

@@ -1,12 +1,12 @@
 {
     "filters": {
         "planning": "",
-        "cuisine": "",
-        "mood": "",
-        "diet": "",
-        "skill": "",
+        "cuina": "",
+        "estat d'ànim": "",
+        "al·lèrgens": "",
+        "dificultat": "",
         "main_ingredient": "",
-        "course": [],
+        "plat": [],
         "kw": [],
         "ingred": []
     },

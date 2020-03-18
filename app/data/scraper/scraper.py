@@ -98,7 +98,7 @@ def get_recipe_details():
 
             # separate single and multiple items for iterating
             filters_single_list = ['planning', 'cuisine', 'mood', 'diet', 'skill_level', 'main_ingredient']
-            filters_multiple_list = ['course', 'kw', 'ingred']
+            filters_multiple_list = ['plat', 'kw', 'ingred']
             html_data = [
                 ['title', "h1", {"class": "recipe-header__title"}],
                 ['author', "span", {"class": "author"}],
