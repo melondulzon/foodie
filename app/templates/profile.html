@@ -3,16 +3,16 @@
 <section id="profile" class="uk-container">
 
     <!-- TITLE -->
-    <h1 class="uk-heading-divider uk-h2 uk-margin">Welcome, {{ current_user.user['username']|title }}.</h1>
+    <h1 class="uk-heading-divider uk-h2 uk-margin">Bones, {{ current_user.user['username']|title }}.</h1>
 
     <!-- EDITED RECIPES -->
     <div id="my-recipes" class=" uk-margin uk-inline">
-        <h2 class="uk-h4">My Edited Recipes</h2>
+        <h2 class="uk-h4">Les meves receptes</h2>
 
         <!-- PLACEHOLDER IF 0 RECIPES EXIST  -->
         {% if recipes|count == 0 %}
             <div id="recipes-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
-                    <p>Such Empty, No Edited Recipes Yet.</p>
+                    <p>Treballes poc, no hi ha cap recepta encara.</p>
             </div>
         {% else %}
             <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
@@ -24,8 +24,8 @@
             <!-- SHOW BUTTONS IF MORE THAN 8 RECIPES EXIST -->
             {% if recipes|count > 8 %}
                 <div class="uk-margin-top">
-                    <button id="show-more-recipes" class="uk-button">Show More</button>
-                    <button id="show-less-recipes" class="uk-button uk-button-danger">Show Less</button>
+                    <button id="show-more-recipes" class="uk-button">Mostra'n més</button>
+                    <button id="show-less-recipes" class="uk-button uk-button-danger">Mostra'n menys</button>
                 </div>
             {% endif %}
         {% endif %}
@@ -33,12 +33,12 @@
 
     <!-- RECENT COMMENTS -->
     <div id="my-comments" class="uk-margin uk-inline">    
-        <h2 class="uk-h4">My Recent Comments</h2>
+        <h2 class="uk-h4">Els meus comentaris recents</h2>
         {% if current_user.user['comments']|count == 0 %}
 
             <!-- PLACEHOLDER IF NO COMMENTS EXIST -->    
             <div id="comments-placeholder" class="uk-placeholder uk-text-center">
-                    <p>Such Empty, No Comments Yet.</p>
+                    <p>Això està buit, cap comentari.</p>
             </div>
         {% else %}
 
@@ -70,7 +70,7 @@
     </div>
 
     <!-- SITE STATISTICS -->
-    <h2 class="uk-h4 uk-heading-divider">Site Statistics</h2>
+    <h2 class="uk-h4 uk-heading-divider">Estadístiques</h2>
     <div class="uk-margin-medium-top" uk-grid>
 
         <!-- LIKES / DISLIKES BAR CHART -->

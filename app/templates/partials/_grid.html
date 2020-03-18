@@ -28,19 +28,19 @@
 
         <!-- SORT BY -->
         <p class="uk-text-meta">
-            {% if sort == 'users.likes' %}Likes: <i uk-icon="arrow-down"></i>
-            {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
-            {% elif sort == 'details.title' %}By Title
-            {% elif sort == 'filters.skill' %}Difficulty: {{ recipe.filters.skill }}
-            {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
+            {% if sort == 'users.likes' %}M'agrada: <i uk-icon="arrow-down"></i>
+            {% elif sort == 'users.dislikes' %}No m'agrada: <i uk-icon="arrow-down"></i>
+            {% elif sort == 'details.title' %}Per títol:
+            {% elif sort == 'filters.skill' %}Dificultat: {{ recipe.filters.skill }}
+            {% elif sort == 'details.author' %}Autor: {{ recipe.details.author }}
             {% elif sort == 'details.serves' %}{{ recipe.details.serves|title }}
-            {% elif sort == 'filters.main_ingredient' %}Main Ingredient:  
+            {% elif sort == 'filters.main_ingredient' %}Ingredient Principal:  
                 {% if recipe.filters.main_ingredient != "" %}
                     {{ recipe.filters.main_ingredient }}
                 {% else %}
                     {{ recipe.filters.ingred[0] }}
                 {% endif %}
-            {% else %}Likes <i uk-icon="arrow-down"></i>
+            {% else %}M'agrada: <i uk-icon="arrow-down"></i>
             {% endif %}
         </p>
 

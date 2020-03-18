@@ -21,11 +21,11 @@
                             <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a>
                         </h3>
                         <p>{{ recipe.details.description }}</p>
-                        <p><span class="card-lead-text">Author:</span>{{ recipe.details.author }}</p>
-                        <p><span class="card-lead-text">Difficulty:</span>{{ recipe.details.difficulty }}</p>
-                        <p><span class="card-lead-text">Serves:</span>{{ recipe.details.serves }}</p>
+                        <p><span class="card-lead-text">Autor:</span>{{ recipe.details.author }}</p>
+                        <p><span class="card-lead-text">Dificultat:</span>{{ recipe.details.difficulty }}</p>
+                        <p><span class="card-lead-text">Racions:</span>{{ recipe.details.serves }}</p>
                         <p class="slider-icons"><i uk-icon="bell"></i> {{ recipe.details.cook_time  }} <i uk-icon="bolt"></i> {{ recipe.details.prep_time }}</p>
-                        <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">More Details ...</a></p>
+                        <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">Més detalls...</a></p>
                         
                         <!--ICONNAV -->
                         <div class="uk-card-footer uk-position-bottom-right">

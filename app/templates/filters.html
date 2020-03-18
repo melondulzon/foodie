@@ -4,14 +4,14 @@
 
     <!-- SET TITLE BASED ON URL -->
     {% if not search_term %}
-        <h1 class="uk-heading-divider uk-h2">Filter All Recipes</h1>
+        <h1 class="uk-heading-divider uk-h2">Filtra totes les receptes</h1>
     {% else %}
-        <h1 class="uk-heading-divider uk-h2">Search Results for  ... {{ search_term|title }}</h1>
+        <h1 class="uk-heading-divider uk-h2">Cerca receptes per... {{ search_term|title }}</h1>
     {% endif %}
 
     <!-- MOBILE FILTERS EXPENDER MENU -->
     <div id="expand-filters"  uk-toggle="target: #filters-form; animation: uk-animation-fade; cls: filters-toggle;">
-        <button class="uk-button uk-width-1-1">Toggle Filters Menu</button>
+        <button class="uk-button uk-width-1-1">Desplega menú per filtrar</button>
     </div>
 
     <!-- SET TITLE BASED ON SEARCH OR FILTER -->
@@ -22,21 +22,21 @@
             {% endif %}
         <!-- FILTERS FORM -->
         <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-select">Sort By</label>
+            <label class="uk-form-label" for="form-stacked-select">Ordena per</label>
             <div class="uk-form-controls">
                 <select class="uk-select" id="form-stacked-select" name="sort">
-                    <option value="users.likes,-1" selected>Likes</option>
-                    <option value="users.dislikes,1">Dislikes</option>
-                    <option value="details.title,1">Title</option>
-                    <option value="filters.skill,1">Difficulty</option>
-                    <option value="details.author,1'">Author</option>
-                    <option value="details.serves,-1">Servings</option>
-                    <option value="filters.main_ingredient,1">Main Ingredient</option>
+                    <option value="users.likes,-1" selected>M'agrada</option>
+                    <option value="users.dislikes,1">No m'agrada</option>
+                    <option value="details.title,1">Títol</option>
+                    <option value="filters.skill,1">Dificultat</option>
+                    <option value="details.author,1'">Autor</option>
+                    <option value="details.serves,-1">Racions</option>
+                    <option value="filters.main_ingredient,1">Ingredient principal</option>
                 </select>
             </div>
         </div>
         <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-select">Number of Results</label>
+            <label class="uk-form-label" for="form-stacked-select">Número de resultats</label>
             <div class="uk-form-controls">
                 <select class="uk-select" id="form-stacked-select" name="limit">
                     <option value="12" selected>12</option>
@@ -51,7 +51,7 @@
             <label class="uk-form-label" for="form-stacked-select">{{ key|title }}</label>
             <div class="uk-form-controls">
                 <select class="uk-select" id="form-stacked-select" name="{{ key }}">
-                    <option value="all" selected>All</option>
+                    <option value="all" selected>Tot</option>
                     {% for value in values %}
                     <option value="{{ value }}">{{  value|title }}</option>
                     {% endfor %}
@@ -59,8 +59,8 @@
             </div>
         </div>
         {% endfor %}
-        <input type="submit" class="uk-button uk-button" value="Filter">
-        <input type="reset" class="uk-button uk-button" value="Reset">
+        <input type="submit" class="uk-button uk-button" value="Filtra">
+        <input type="reset" class="uk-button uk-button" value="Reseteja">
     </form>
 
     <!-- DISPLAY RESULTS -->
@@ -74,7 +74,7 @@
         <!-- PLACEHOLDER IF NO RESULTS EXIST -->
         {% if not recipes|count %}
             <div class="uk-placeholder uk-text-center uk-padding-large">
-                <p>Such Empty, No Results, Try again!</p>
+                <p>No hi ha resultsts, prova de nou!</p>
             </div>
         {% endif %}
     </div>

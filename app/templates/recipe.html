@@ -20,7 +20,7 @@
             <!-- NUTRITION TABLE -->
             <div class="uk-margin-medium uk-overflow-auto">
                 <table class="uk-table uk-table-divider uk-table-striped uk-table-small uk-table-justify">
-                    <caption class="uk-text-bold">Nutrition</caption>
+                    <caption class="uk-text-bold">Nutrició</caption>
                     <thead>
                         <tr>
                             {% for item in recipe.nutrition %}
@@ -81,7 +81,7 @@
         
         <!-- METHODS -->
         <div class="uk-inline uk-width-2-3@l">
-            <h3>Preparation</h3>
+            <h3>Preparació</h3>
             <p>{{ recipe.details.serves }}</p>
             <ol class="uk-list uk-list-divider">
                 {% for v in recipe.methods %}
@@ -95,8 +95,8 @@
 
 <!-- COMMENTS -->
 <section id="comments" class="uk-container uk-margin-large">
-    <h2>Comments</h2>
-    <p class="uk-margin-remove-bottom">Have your say about this recipe!</p>
+    <h2>Comentaris</h2>
+    <p class="uk-margin-remove-bottom">Digues el que en penses!</p>
 
     <!-- USER COMMENTS -->
     <div id="user-comments" class="uk-margin-medium">
@@ -110,18 +110,18 @@
 
             <!-- PLACEHOLDER IF NO COMMENT EXISTS -->    
             <div id="comments-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
-                <p>Such Empty, No Comments Yet.</p>
+                <p>Poca opinió té la gent, no hi ha comentaris.</p>
             </div>
         {% endif%}
     </div>
 
     <!-- FORM / ALERT -->
-    <h3>Leave a comment ...</h3>
+    <h3>Afegeix un comentari...</h3>
 
     <!-- REQUIRE SIGN IN TO POST A COMMENT -->
     {% if not current_user.is_authenticated %}
     <div class="uk-alert-primary" uk-alert>
-        <p>You must be logged in to comment. <a class="uk-align-right@s uk-margin-remove-bottom" href="{{ url_for('sign', url='in') }}" class="sign-link"> Sign In </a></p>
+        <p>Has d'estar registrat per poder comentar. <a class="uk-align-right@s uk-margin-remove-bottom" href="{{ url_for('sign', url='in') }}" class="sign-link"> Entra </a></p>
     </div>
 
     <!-- COMMENT INPUT FORM -->

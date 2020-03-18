@@ -4,7 +4,7 @@
 <ul class="uk-pagination uk-flex-center uk-margin-large uk-text-emphasis">
     
     <!-- FIRST PAGE ARROW -->
-    <li><a href="{{ url_for( 'categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> First </a></li>
+    <li><a href="{{ url_for( 'categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> Primera </a></li>
 
     <!-- LOOP OVER PAGE INDEXES -->
     {% for index in range(start,  end) %}
@@ -18,7 +18,7 @@
         {% endfor %}
 
     <!-- LAT PAGE ARROW -->
-    <li><a href="{{ url_for('categories', category=category, data=data, page=(pages-1), sort=sort)}}"><span uk-pagination-next> Last </span></a></li>
+    <li><a href="{{ url_for('categories', category=category, data=data, page=(pages-1), sort=sort)}}"><span uk-pagination-next> Última </span></a></li>
 </ul>
 {% endif %}
 {% endblock %}

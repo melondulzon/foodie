@@ -3,41 +3,41 @@
 <section id="editor" class="uk-container">
 
     <!-- HEADING -->
-    <h1 class="uk-h2">{{ url|title }} Recipe</h1>
+    <h1 class="uk-h2">{{ url|title }} Recepta</h1>
 
     <!-- FORM -->
     <form method="POST" {% if recipe %} action="{{ url_for('save_recipe', recipe_id=recipe._id) }}" {% else %} action="{{ url_for('save_recipe', recipe_id='new') }}" {% endif %} >
         <div class="uk-margin-bottom" class="uk-grid-small" uk-grid>
 
             <!-- DETAILS -->
-            <h3 class="uk-h3 uk-width-1-1">Details</h3>
+            <h3 class="uk-h3 uk-width-1-1">Detalls</h3>
 
             <!-- AUTHOR -->
             <div class="uk-width-1-2@s">
-                <label class="uk-form-label" for="author">Author</label>
+                <label class="uk-form-label" for="author">Autor</label>
                 <input class="uk-input" type="text" name="author"  {% if recipe %} value="{{ recipe.details.author }}" {% else %} value="{{ current_user.user['username']|title }}" {% endif %} autocomplete="off" required>
             </div>
 
             <!-- TITLE -->
             <div class="uk-width-1-2@s">
-                <label class="uk-form-label" for="title">Title</label>
+                <label class="uk-form-label" for="title">Títol</label>
                 <input class="uk-input" type="text" name="title" {% if recipe %} value="{{ recipe.details.title }}" {% endif %} autocomplete="off" required>
             </div>
 
             <!-- DESCRIPTION -->
             <div class="uk-width-1-1@m">
-                <label class="uk-form-label" for="description">Description</label>
-                <input class="uk-input" rows="4" type="text" name="description" {% if recipe %} value="{{ recipe.details.description }}" {% else %} placeholder="Write a little about this recipe!" {% endif %} autocomplete="off" required>
+                <label class="uk-form-label" for="description">Descripció</label>
+                <input class="uk-input" rows="4" type="text" name="description" {% if recipe %} value="{{ recipe.details.description }}" {% else %} placeholder="Digues una breu descripció de la recepta!" {% endif %} autocomplete="off" required>
             </div>
 
             <!-- IMAGE -->
             <div class="uk-width-1-1@m">
-                <label class="uk-form-label" for="image-url">Image URL</label>
+                <label class="uk-form-label" for="image-url">Url de la imatge</label>
                 <input class="uk-input" type="url" name="image-url" {% if recipe %} value="{{ recipe.image[0] }}" {% else %} value="http://tinyurl.com/y43mkb4h" {% endif %} autocomplete="off" required>
             </div>
 
             <!-- FILTERS -->
-            <h3 class="uk-h3 uk-width-1-1">Filters</h3>
+            <h3 class="uk-h3 uk-width-1-1">Categories</h3>
             {% for key, values in filters.items() %}
             <div class="uk-width-1-3@s uk-width-1-6@m">
                 <!-- FILTER TITLE -->
@@ -79,41 +79,41 @@
             {% endfor %}
 
              <!-- SERVES -->
-             <h3 class="uk-h3 uk-width-1-1">Times</h3>
+             <h3 class="uk-h3 uk-width-1-1">Temps</h3>
              <div class="uk-width-1-3@s">
-                <label class="uk-form-label" for="serves">No. of Servings</label>
-                <input class="uk-input" type="text" name="serves" {% if recipe %} value="{{ recipe.details.serves }}" {% else %} value="Serves: " {% endif %} autocomplete="off" required>
+                <label class="uk-form-label" for="serves">Nº de racions</label>
+                <input class="uk-input" type="text" name="serves" {% if recipe %} value="{{ recipe.details.serves }}" {% else %} value="Racions: " {% endif %} autocomplete="off" required>
             </div>
 
             <!-- COOK TIME -->
             <div class="uk-width-1-3@s">
-                <label class="uk-form-label" for="cook-time">Cooking Time</label>
-                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cook: " {% endif %} rautocomplete="off" equired>
+                <label class="uk-form-label" for="cook-time">Temps de cocció</label>
+                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cocció: " {% endif %} rautocomplete="off" equired>
             </div>
 
             <!-- PREP TIME -->
             <div class="uk-width-1-3@s">
-                <label class="uk-form-label" for="prep-time">Preperation Time</label>
-                <input class="uk-input" type="text" name="prep-time" {% if recipe %} value="{{ recipe.details.prep_time }}" {% else %} value="Prep: " {% endif %}  autocomplete="off" required>
+                <label class="uk-form-label" for="prep-time">Temps de preparació</label>
+                <input class="uk-input" type="text" name="prep-time" {% if recipe %} value="{{ recipe.details.prep_time }}" {% else %} value="Preparació: " {% endif %}  autocomplete="off" required>
             </div>
 
             <!-- IINSTRUCTIONS -->
-            <h3 class="uk-h3 uk-width-1-1">Instructions</h3>
+            <h3 class="uk-h3 uk-width-1-1">Instruccions</h3>
             <div id="instructions" class="uk-grid uk-grid-collapse uk-width-1-1@m" uk-grid>
                 {% if recipe %}
                     {% for method in recipe.methods %}
                         <div class="uk-width-1-2@s">
-                            <label class="uk-form-label ">No. {{ loop.index }}.</label>
+                            <label class="uk-form-label ">Nº {{ loop.index }}.</label>
                             <input class="uk-input" type="textarea" name="instruction-{{ loop.index }}" value="{{ method }}" autocomplete="off">
                         </div>
                     {% endfor %}
                 {% else %}
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label ">No. 1</label>
+                        <label class="uk-form-label ">Nº 1</label>
                         <input class="uk-input" type="textarea" name="instruction-1" autocomplete="off">
                     </div>
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label ">No. 2</label>
+                        <label class="uk-form-label ">Nº 2</label>
                         <input class="uk-input" type="textarea" name="instruction-2" autocomplete="off">
                     </div>
                 {% endif %}
@@ -121,8 +121,8 @@
 
             <!-- ADD / REMOVE INSTRUCTIONS BUTTONS -->
             <div class="uk-width-1-1">
-                <input id="add-instruction" type="button" class="uk-button" value="Add Instruction">
-                <input id="remove-instruction" type="button" class="uk-button uk-button-danger" value="Remove Last">
+                <input id="add-instruction" type="button" class="uk-button" value="Afegir instrucció">
+                <input id="remove-instruction" type="button" class="uk-button uk-button-danger" value="Eliminar última instrucció">
             </div>
 
             
@@ -143,31 +143,31 @@
 
             <!-- ADD / REMOVE INGREDIENT BUTTONS -->
             <div class="uk-width-1-1">
-                <input id="add-ingredient" type="button" class="uk-button" value="Add Ingredient">
-                <input id="remove-ingredient" type="button" class="uk-button uk-button-danger" value="Remove Last">
+                <input id="add-ingredient" type="button" class="uk-button" value="Afegir ingredient">
+                <input id="remove-ingredient" type="button" class="uk-button uk-button-danger" value="Eliminar últim ingredient">
             </div>
 
             <!-- KEYWORDS -->
-            <h3 class="uk-h3 uk-width-1-1">Keywords</h3>
+            <h3 class="uk-h3 uk-width-1-1">Paraules clau</h3>
             <div class="uk-width-1-1@m">
-                <label class="uk-form-label" for="keywords">comma seperated values</label>
+                <label class="uk-form-label" for="keywords">valors separats per comes</label>
                 <input id="keywords" class="uk-input" type="text" name="keywords" {% if recipe %} value="{% for kw in recipe.filters.kw %} {{ kw}}, {% endfor %}" {% endif %} autocomplete="off">
             </div>
         
 
             <!-- NUTRITION TABLE -->
-            <h3 class="uk-h3 uk-width-1-1">Nutrition</h3>
+            <h3 class="uk-h3 uk-width-1-1">Nutrició</h3>
             <div class="uk-width-1-1@m">
                 <div class="uk-margin-medium uk-overflow-auto">
                     <table class="uk-table uk-table-divider uk-table-striped uk-table-small uk-table-justify">
                         <thead>
                             <tr>
                                 <th class="uk-text-bold">kcal</th>
-                                <th class="uk-text-bold">fat</th>
-                                <th class="uk-text-bold">saturates</th>
-                                <th class="uk-text-bold">carbs</th>
-                                <th class="uk-text-bold">sugars</th>
-                                <th class="uk-text-bold">fibre</th>
+                                <th class="uk-text-bold">greixos</th>
+                                <th class="uk-text-bold">saturats</th>
+                                <th class="uk-text-bold">carbohidrats</th>
+                                <th class="uk-text-bold">sucres</th>
+                                <th class="uk-text-bold">fibra</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -182,15 +182,15 @@
             </div>
 
             <!-- Save Recipe -->
-            <h3 class="uk-h3 uk-width-1-1">Save / Delete Recipe</h3>
+            <h3 class="uk-h3 uk-width-1-1">Guardar / Eliminar Recepta</h3>
         </div>
         <!-- Save / Reset Buttons -->
-        <input type="submit" class="uk-button uk-button" value="Save">
+        <input type="submit" class="uk-button uk-button" value="Guardar">
         <input type="reset" class="uk-button uk-button" value="Reset">
 
         <!-- IF ITS A EDITED RECIPE - MAKE DELETE BUTTON AVAILABLE -->
         {% if recipe %}
-            <a class="uk-button uk-button-danger" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
+            <a class="uk-button uk-button-danger" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Elimina</a>
         {% endif %}
     </form>
 </section>
