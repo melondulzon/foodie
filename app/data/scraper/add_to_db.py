@@ -65,9 +65,9 @@ def add_filters():
         cuina = []
         planning = []
         dificultat = []
-        estat d'ànim = []
+        mood = []
         plat = []
-        al·lèrgens = []
+        alergens = []
 
         # Iterate over Recipes
         for i in data['recipes']:
@@ -88,14 +88,14 @@ def add_filters():
                     dificultat.append(i['filters']['dificultat'])
 
             # estat d'ànim
-            if not i['filters']['estat d'ànim'] in estat d'ànim:
-                if not i['filters']['estat d'ànim'] == '':
-                    estat d'ànim.append(i['filters']['estat d'ànim'])
+            if not i['filters']["estat d'ànim"] in mood:
+                if not i['filters']["estat d'ànim"] == '':
+                    mood.append(i['filters']["estat d'ànim"])
 
             # al·lèrgens
-            if not i['filters']['al·lèrgens'] in al·lèrgens:
+            if not i['filters']['al·lèrgens'] in alergens:
                 if not i['filters']['al·lèrgens'] == '':
-                    al·lèrgens.append(i['filters']['al·lèrgens'])
+                    alergens.append(i['filters']['al·lèrgens'])
 
             # plat
             for plats in i['filters']['plat']:
@@ -109,7 +109,7 @@ def add_filters():
             "plat": plat,
             "planning": planning,
             "estat d'ànim": mood,
-            "al·lèrgens": al·lèrgens,
+            "al·lèrgens": alergens,
             "dificultat": dificultat
         })
 
