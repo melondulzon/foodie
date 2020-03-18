@@ -62,55 +62,55 @@ def add_filters():
     with open('db.json') as db_file:
         data = json.load(db_file)
 
-        cuina = []
+        cuisine = []
         planning = []
-        dificultat = []
+        skill = []
         mood = []
-        plat = []
-        alergens = []
+        course = []
+        diet = []
 
         # Iterate over Recipes
         for i in data['recipes']:
 
-            # cuina
-            if not i['filters']['cuina'] in cuina:
-                if not i['filters']['cuina'] == '':
-                    cuina.append(i['filters']['cuina'])
+            # cuisine
+            if not i['filters']['cuisine'] in cuisine:
+                if not i['filters']['cuisine'] == '':
+                    cuisine.append(i['filters']['cuisine'])
 
             # planning
             if not i['filters']['planning'] in planning:
                 if not i['filters']['planning'] == '':
                     planning.append(i['filters']['planning'])
 
-            # dificultat
-            if not i['filters']['dificultat'] in dificultat:
-                if not i['filters']['dificultat'] == '':
-                    dificultat.append(i['filters']['dificultat'])
+            # skill
+            if not i['filters']['skill'] in skill:
+                if not i['filters']['skill'] == '':
+                    skill.append(i['filters']['skill'])
 
-            # estat d'ànim
-            if not i['filters']["estat d'ànim"] in mood:
-                if not i['filters']["estat d'ànim"] == '':
-                    mood.append(i['filters']["estat d'ànim"])
+            # mood
+            if not i['filters']['mood'] in mood:
+                if not i['filters']['mood'] == '':
+                    mood.append(i['filters']['mood'])
 
-            # al·lèrgens
-            if not i['filters']['al·lèrgens'] in alergens:
-                if not i['filters']['al·lèrgens'] == '':
-                    alergens.append(i['filters']['al·lèrgens'])
+            # diet
+            if not i['filters']['diet'] in diet:
+                if not i['filters']['diet'] == '':
+                    diet.append(i['filters']['diet'])
 
-            # plat
-            for plats in i['filters']['plat']:
-                if plats not in plat:
-                    if not plats == '':
-                        plat.append(plats)
+            # course
+            for courses in i['filters']['course']:
+                if courses not in course:
+                    if not courses == '':
+                        course.append(courses)
 
         # insert document into mongo collection - filters
         filters.insert_one({
-            "cuina": cuina,
-            "plat": plat,
+            "cuisine": cuisine,
+            "course": course,
             "planning": planning,
-            "estat d'ànim": mood,
-            "al·lèrgens": alergens,
-            "dificultat": dificultat
+            "mood": mood,
+            "diet": diet,
+            "skill": skill
         })
 
 

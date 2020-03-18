@@ -4,7 +4,7 @@
         <li><a href="{{ url_for('categories' , category=category, data=data, sort='users.likes')}}">M'agrada</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='users.dislikes')}}">No m'agrada</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='details.title', order=1)}}">Títol</a></li>
-        <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.dificultat', order=1)}}">Dificultat</a></li>
+        <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.skill', order=1)}}">Dificultat</a></li>
         <li><a href="{{ url_for('categories',category=category, data=data, sort='details.author', order=1)}}">Autor</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='details.serves', order=-1)}}">Racions</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.main_ingredient', order=1)}}">Ingredient principal</a></li>

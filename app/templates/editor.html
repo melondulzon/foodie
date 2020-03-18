@@ -51,7 +51,7 @@
                                     <!-- COURSE COULD BE EITHER ARRAY OR STRING -->
                                     {% if item == key %}
                                         <!-- IF ARRAY TAKE FIRST INDEX -->
-                                        {% if key == 'plat' and itemValue is iterable and itemValue is not string %}
+                                        {% if key == 'course' and itemValue is iterable and itemValue is not string %}
                                             <option value="{{ itemValue[0] }}" selected>{{ itemValue[0]|title }}</option>
                                         <!-- OTHERWISE ITS JUST A STRING -->
                                         {% else %}

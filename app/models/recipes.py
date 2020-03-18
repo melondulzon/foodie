@@ -131,12 +131,12 @@ class Recipe:
         recipe['details']['author'] = data['author']
         recipe['details']['title'] = data['title']
         recipe['details']['description'] = data['description']
-        recipe['filters']['cuina'] = data['cuina']
-        recipe['filters']['plat'] = data['plat']
+        recipe['filters']['cuisine'] = data['cuisine']
+        recipe['filters']['course'] = data['course']
         recipe['filters']['planning'] = data['planning']
-        recipe['filters']['estat d'ànim'] = data['estat d'ànim']
-        recipe['filters']['al·lèrgens'] = data['al·lèrgens']
-        recipe['filters']['dificultat'] = data['dificultat']
+        recipe['filters']['mood'] = data['mood']
+        recipe['filters']['diet'] = data['diet']
+        recipe['filters']['skill'] = data['skill']
         recipe['details']['serves'] = data['serves']
         recipe['details']['cook_time'] = data['cook-time']
         recipe['details']['prep_time'] = data['prep-time']
@@ -149,7 +149,7 @@ class Recipe:
 
         if recipe_id == 'new':
             recipe['image'] = [data['image-url']]
-            recipe['filters']['ingred'] = [data['cuina']]
+            recipe['filters']['ingred'] = [data['cuisine']]
         else:
             recipe['image'][0] = data['image-url']
 

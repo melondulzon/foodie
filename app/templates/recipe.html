@@ -15,7 +15,7 @@
         <!-- DETAILS -->
         <div class="uk-padding-bottom uk-inline uk-width-2-3@m">
             <p class="uk-text-lead">{{ recipe.details.description }}</p>
-            <span class="cuisine-badge">{{ recipe.filters.cuina|title }}</span>
+            <span class="cuisine-badge">{{ recipe.filters.cuisine|title }}</span>
 
             <!-- NUTRITION TABLE -->
             <div class="uk-margin-medium uk-overflow-auto">
@@ -48,7 +48,7 @@
             <p>
                 <i uk-icon="tag"></i>
                 {% for key, value in recipe.filters.items() %}
-                    {% if key in ['planning', 'estat d'ànim', 'al·lèrgens', 'dificultat', 'cuina'] and value != "" %}
+                    {% if key in ['planning', 'mood', 'diet', 'skill', 'cuisine'] and value != "" %}
                         <a class="tags uk-text-nowrap" href="{{ url_for('categories', category=key, data=value) }}"><i uk-icon="hashtag"></i>{{ value }}</a>
                     {% endif %}
                 {% endfor %}
