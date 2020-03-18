@@ -1,8 +1,17 @@
 {
+<<<<<<< HEAD
     "cuisine": ["americana", "britànica", "caribenya", "xinesa", "francesa", "grega", "india", "italiana", "japonesa", "mediterrània", "mexicana", "marroquí", "catalana", "thai", "turca", "vietnamita"],
     "course": ["berenar", "esmorzar", "aperitiu", "bufet", "canapès", "cocktails", "acompanyament", "postre", "sopar", "beguda", "peix", "dinar", "principal", "pasta", "complement", "snack", "sopa", "entrant", "sopar", "vegà", "vegetarià"],
+=======
+    "cuina": ["americana", "britànica", "caribenya", "xinesa", "francesa", "grega", "india", "italiana", "japonesa", "mediterrània", "mexicana", "marroquí", "catalana", "thai", "turca", "vietnamita"],
+    "plat": ["berenar", "esmorzar", "aperitiu", "bufet", "canapès", "cocktails", "acompanyament", "postre", "sopar", "beguda", "peix", "dinar", "principal", "pasta", "complement", "snack", "sopa", "entrant", "sopar", "vegà", "vegetarià"],
+>>>>>>> parent of a5caf70... Update filters.json
     "planning": ["sopar ràpid", "principiant", "fàcil de dividir", "per al dia a dia", "congelable", "de temporada", "sense preparació", "per fer la nit abans", "última hora"],
     "mood": ["low-cost", "casual", "còmoda", "familiar", "formal", "romàntic", "indulgent", "lleugera", "ràpida", "festiu"],
     "diet": ["sense làctosa", "gluten-free", "saludable", "baix en calories", "baix en greixos", "baix en sals", "vegetarian"],
     "skill": ["fàcil", "mitjà", "difícil"]
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 4a17243... petit canvi a categories
+>>>>>>> parent of a5caf70... Update filters.json
 }
