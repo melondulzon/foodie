@@ -9,7 +9,7 @@
         <!-- RECIPE IMAGE / AUTHOR -->
         <div class="uk-text-center uk-inline uk-width-1-3@m">
             <img height="400" width="375" src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}">
-            <p><span class="card-lead-text">Author:</span>{{ recipe.details.author }}</p>
+            <p><span class="card-lead-text">Autor:</span>{{ recipe.details.author }}</p>
         </div>
 
         <!-- DETAILS -->
@@ -40,15 +40,15 @@
             
             <!-- COOK / PREP TIME -->
             <p class="slider-icons">
-                <span class="uk-text-nowrap"><i uk-icon="bell"></i> {{ recipe.details.cook_time  }} </span>
-                <span class="uk-text-nowrap"><i uk-icon="bolt"></i> {{ recipe.details.prep_time }}</span>
+                <span class="uk-text-nowrap"><i uk-icon="clock"></i> Cocció: {{ recipe.details.cook_time|last  }}' </span>
+                <span class="uk-text-nowrap"><i uk-icon="clock"></i> Preparació: {{ recipe.details.prep_time|last }}' </span>
             </p>                
 
             <!-- TAGS -->
             <p>
                 <i uk-icon="tag"></i>
                 {% for key, value in recipe.filters.items() %}
-                    {% if key in ['planning', 'mood', 'diet', 'skill', 'cuisine'] and value != "" %}
+                    {% if key in ['format', 'moment', 'excepcions', 'habilitat', 'cuina'] and value != "" %}
                         <a class="tags uk-text-nowrap" href="{{ url_for('categories', category=key, data=value) }}"><i uk-icon="hashtag"></i>{{ value }}</a>
                     {% endif %}
                 {% endfor %}
@@ -82,7 +82,7 @@
         <!-- METHODS -->
         <div class="uk-inline uk-width-2-3@l">
             <h3>Preparació</h3>
-            <p>{{ recipe.details.serves }}</p>
+            <p>{{ recipe.details.serves|last }} persones</p>
             <ol class="uk-list uk-list-divider">
                 {% for v in recipe.methods %}
                     <li> {{ v }}</li>
@@ -110,7 +110,7 @@
 
             <!-- PLACEHOLDER IF NO COMMENT EXISTS -->    
             <div id="comments-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
-                <p>Poca opinió té la gent, no hi ha comentaris.</p>
+                <p>Un món sense opinions pot ser avorrit... Sigues el primer en comentar!</p>
             </div>
         {% endif%}
     </div>
@@ -127,10 +127,10 @@
     <!-- COMMENT INPUT FORM -->
     {% elif current_user.is_authenticated %}
     <form id="comments-form" method="" action="" class="uk-text-right">
-        <label class="uk-form-label" for="form-reply-comment">Reply <i uk-icon="reply"></i></label>
-        <input class="uk-input" id="form-reply-comment" type="text" placeholder="Comment here ..." autocomplete="off" required>
+        <label class="uk-form-label" for="form-reply-comment">Respon <i uk-icon="reply"></i></label>
+        <input class="uk-input" id="form-reply-comment" type="text" placeholder="El teu comentari ..." autocomplete="off" required>
         <input type="hidden" id="hidden-input" value="{{ current_user.user['username'] }}">
-        <input class="uk-button-primary uk-margin-small uk-button" type="submit" value="Send"></input>
+        <input class="uk-button-primary uk-margin-small uk-button" type="submit" value="Envia"></input>
     </form>
     {% endif %}
 

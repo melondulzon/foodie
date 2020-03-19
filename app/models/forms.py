@@ -12,10 +12,10 @@ class SignForm(FlaskForm):
     """
 
     # Fields - require some validation
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember = BooleanField('Remember Me')
-    submit = SubmitField('Submit')
+    username = StringField('Usuari', validators=[DataRequired()])
+    password = PasswordField('Contrasenya', validators=[DataRequired()])
+    remember = BooleanField("Recorda'm")
+    submit = SubmitField('Registrar-me')
 
     # username
     def validate_username(self, username):

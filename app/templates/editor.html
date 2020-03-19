@@ -88,7 +88,7 @@
             <!-- COOK TIME -->
             <div class="uk-width-1-3@s">
                 <label class="uk-form-label" for="cook-time">Temps de cocció</label>
-                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cocció: " {% endif %} rautocomplete="off" equired>
+                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cocció: " {% endif %} autocomplete="off" required>
             </div>
 
             <!-- PREP TIME -->
