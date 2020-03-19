@@ -1,5 +1,6 @@
 # folders
 venv
+misc
 __pycache__/
 .vscode
 .idea

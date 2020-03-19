@@ -16,15 +16,15 @@
 
                     <!-- CARD BODY -->
                     <div class="uk-card-body">
-                        <div class="uk-card-badge uk-label">{{ recipe.filters.cuisine|title }}</div>
+                        <div class="uk-card-badge uk-label">{{ recipe.filters.cuina|title }}</div>
                         <h3 class="uk-card-title">
                             <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a>
                         </h3>
                         <p>{{ recipe.details.description }}</p>
                         <p><span class="card-lead-text">Autor:</span>{{ recipe.details.author }}</p>
-                        <p><span class="card-lead-text">Dificultat:</span>{{ recipe.details.difficulty }}</p>
-                        <p><span class="card-lead-text">Racions:</span>{{ recipe.details.serves }}</p>
-                        <p class="slider-icons"><i uk-icon="clock"></i> Cocció: {{ recipe.details.cook_time|last  }}'<i uk-icon="clock">  </i> Preparació: {{ recipe.details.prep_time|last  }}'</p>
+                        <p><span class="card-lead-text">Racions:</span>{{ recipe.details.serves|last }} persones</p>
+                        <p class="slider-icons"><i uk-icon="clock"></i> Cocció: {{ recipe.details.cook_time|last  }}'</p>
+                        <p class="slider-icons"><i uk-icon="clock"></i> Preparació: {{ recipe.details.prep_time|last  }}'</p>
                         <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">Més detalls...</a></p>
                         
                         <!--ICONNAV -->
